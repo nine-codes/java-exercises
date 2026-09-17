@@ -1,10 +1,8 @@
 package com.amigoscode._1_beginners._1_thebasics;
 
-import java.util.Locale;
-
 /**
  * Exercise: Strings
- * <p>
+ *
  * Learn how to work with Strings in Java.
  * Strings are objects that represent sequences of characters and come with
  * many useful built-in methods.
