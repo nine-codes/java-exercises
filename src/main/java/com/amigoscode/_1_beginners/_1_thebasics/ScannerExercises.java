@@ -1,4 +1,4 @@
-package com.amigoscode._1_beginners;
+package com.amigoscode._1_beginners._1_thebasics;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Learn how to read user input from the console using the Scanner class.
  * Scanner allows your programs to be interactive by accepting input at runtime.
  */
-public class _9_ScannerExercises {
+public class ScannerExercises {
 
     public static void main(String[] args) {
 

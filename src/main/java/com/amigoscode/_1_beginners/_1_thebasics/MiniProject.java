@@ -1,4 +1,4 @@
-package com.amigoscode._1_beginners;
+package com.amigoscode._1_beginners._1_thebasics;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ import java.util.Scanner;
  * The calculator should display a menu, read the user's choice and two numbers,
  * perform the chosen operation, and print the result.
  */
-public class _10_MiniProject {
+public class MiniProject {
 
     public static void main(String[] args) {
 

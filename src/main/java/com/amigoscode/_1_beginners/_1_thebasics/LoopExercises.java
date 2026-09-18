@@ -1,4 +1,4 @@
-package com.amigoscode._1_beginners;
+package com.amigoscode._1_beginners._1_thebasics;
 
 /**
  * Exercise: Loops
@@ -6,7 +6,7 @@ package com.amigoscode._1_beginners;
  * Learn how to use for, while, and do-while loops to repeat code.
  * Loops are fundamental for iterating over data and performing repetitive tasks.
  */
-public class _5_LoopExercises {
+public class LoopExercises {
 
     public static void main(String[] args) {
 

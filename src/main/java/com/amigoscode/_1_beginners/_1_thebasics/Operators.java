@@ -1,4 +1,4 @@
-package com.amigoscode._1_beginners;
+package com.amigoscode._1_beginners._1_thebasics;
 
 /**
  * Exercise: Operators
@@ -6,7 +6,7 @@ package com.amigoscode._1_beginners;
  * Learn how to use arithmetic, comparison, logical, and other operators in Java.
  * Operators allow you to perform operations on variables and values.
  */
-public class _2_Operators {
+public class Operators {
 
     public static void main(String[] args) {
 

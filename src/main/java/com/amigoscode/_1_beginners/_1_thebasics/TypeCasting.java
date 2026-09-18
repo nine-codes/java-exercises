@@ -1,4 +1,4 @@
-package com.amigoscode._1_beginners;
+package com.amigoscode._1_beginners._1_thebasics;
 
 /**
  * Exercise: Type Casting
@@ -7,7 +7,7 @@ package com.amigoscode._1_beginners;
  * Widening (implicit): smaller type -> larger type (e.g., int -> double)
  * Narrowing (explicit): larger type -> smaller type (e.g., double -> int)
  */
-public class _3_TypeCasting {
+public class TypeCasting {
 
     public static void main(String[] args) {
 
