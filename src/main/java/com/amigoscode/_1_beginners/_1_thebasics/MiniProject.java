@@ -1,4 +1,4 @@
-package com.amigoscode._1_beginners;
+package com.amigoscode._1_beginners._1_thebasics;
 
 import java.util.Scanner;
 
@@ -9,11 +9,12 @@ import java.util.Scanner;
  * The calculator should display a menu, read the user's choice and two numbers,
  * perform the chosen operation, and print the result.
  */
-public class _10_MiniProject {
+public class MiniProject {
 
     public static void main(String[] args) {
 
         // TODO: 1 - Create a Scanner for user input
+        Scanner scanner = new Scanner(System.in);
 
 
         // TODO: 2 - Display a menu with the following options:
@@ -24,14 +25,25 @@ public class _10_MiniProject {
         //   "3. Multiply"
         //   "4. Divide"
         //   "Choose an operation (1-4): "
-
+        System.out.print("""
+                === Simple Calculator ===
+                1. Add
+                2. Subtract
+                3. Multiply
+                4. Divide
+                Choose an operation (1-4):\s""");
 
         // TODO: 3 - Read the user's choice into an int variable
+        int choice = scanner.nextInt();
 
 
         // TODO: 4 - Prompt and read two double numbers from the user
         // Print "Enter first number: " and read it.
         // Print "Enter second number: " and read it.
+        System.out.print("Enter first number: ");
+        int a = scanner.nextInt();
+        System.out.print("Enter second number: ");
+        int b = scanner.nextInt();
 
 
         // TODO: 5 - Use a switch statement to perform the chosen operation and print the result
@@ -40,11 +52,24 @@ public class _10_MiniProject {
         // Case 3: Print "Result: " + (num1 * num2)
         // Case 4: Perform division (but handle division by zero first - see TODO 6)
         // Default: Print "Invalid choice"
+        switch (choice) {
+            case 1 -> System.out.printf("Result: %d\n", a + b);
+            case 2 -> System.out.printf("Result: %d\n", a - b);
+            case 3 -> System.out.printf("Result: %d\n", a * b);
+            case 4 -> division(a, b);
+            default -> System.out.println("Invalid choice");
+        }
 
 
         // TODO: 6 - Inside case 4, handle division by zero with an if statement
         // If the second number is 0, print "Error: Cannot divide by zero"
         // Otherwise, print the result of the division
 
+    }
+
+    static void division(int a, int b) {
+        if (b == 0) System.out.println("\"Error: Cannot divide by zero\"");
+
+        System.out.printf("Result: %d\n", a / b);
     }
 }
