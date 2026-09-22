@@ -11,29 +11,42 @@ public class MethodOverloading {
 
     // TODO: 1 - Create a method: int add(int a, int b)
     //  Returns the sum of two integers.
-
+    public static int add(int a, int b) {
+        return a + b;
+    }
 
     // TODO: 2 - Create an overloaded method: int add(int a, int b, int c)
     //  Returns the sum of three integers.
-
+    public static int add(int a, int b, int c) {
+        return a + b + c;
+    }
 
     // TODO: 3 - Create an overloaded method: double add(double a, double b)
     //  Returns the sum of two doubles.
+    public static double add(double a, double b) {
+        return a + b;
+    }
 
 
     // TODO: 4 - Create a method: String format(String value)
     //  Returns the string wrapped in square brackets, e.g., "[hello]".
-
+    public static String format(String value) {
+        return String.format("[%s]", value);
+    }
 
     // TODO: 5 - Create an overloaded method: String format(int value)
     //  Returns the integer formatted with leading zeros to 5 digits.
     //  Example: format(42) returns "00042".
     //  Hint: use String.format("%05d", value)
-
+    public static String format(int value) {
+        return String.format("%05d", value);
+    }
 
     // TODO: 6 - Create an overloaded method: String format(String label, int value)
     //  Returns "label: value", e.g., format("Score", 95) returns "Score: 95".
-
+    public static String format(String label, int value) {
+        return String.format("%s: %d", label, value);
+    }
 
     public static void main(String[] args) {
         MethodOverloading mo = new MethodOverloading();
@@ -46,6 +59,11 @@ public class MethodOverloading {
         //  - format(42)
         //  - format("Score", 95)
         //  Print each result with a descriptive label.
-
+        System.out.printf("Add two numbers: %d\n", add(2, 3));
+        System.out.printf("Add three numbers: %d\n", add(1, 2, 3));
+        System.out.printf("Add two doubles: %f\n", add(1.5, 2.5));
+        System.out.printf("Wrap the string in braces: %s\n", format("hello"));
+        System.out.printf("Return the integer formatted with leading zeros to 5 digits: %s\n", format(42));
+        System.out.printf("Return label and value: %s", format("Score", 95));
     }
 }
