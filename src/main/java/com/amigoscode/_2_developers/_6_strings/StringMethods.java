@@ -2,7 +2,7 @@ package com.amigoscode._2_developers._6_strings;
 
 /**
  * String Methods Exercises
- *
+ * <p>
  * Practice the most commonly used String methods in Java. Strings are immutable
  * in Java — every method returns a NEW string rather than modifying the original.
  */
@@ -19,7 +19,7 @@ public class StringMethods {
     public static String compareEquality(String a, String b) {
         // TODO: 1 - Use equals() and equalsIgnoreCase() to compare a and b.
         //  Return a string in the format: "equals: <result>, equalsIgnoreCase: <result>"
-        return null;
+        return String.format("equals: %s, equalsIgnoreCase: %s", a.equals(b), a.equalsIgnoreCase(b));
     }
 
     /**
@@ -33,7 +33,23 @@ public class StringMethods {
     public static String compareLexicographic(String a, String b) {
         // TODO: 2 - Use a.compareTo(b) and return:
         //  "before" if result < 0, "equal" if result == 0, "after" if result > 0.
-        return null;
+        int result = a.compareTo(b);
+        if (result < 0) {
+            return "before";
+        } else if (result == 0) {
+            return "equal";
+        } else {
+            return "after";
+        }
+
+        /** Apparently we can also use the .signum method which will make the symbols be in the range of -1 to 1
+         * and we can then use a switch statement
+         * return switch (Integer.signum(a.compareTo(b))) {
+         *      case -1 -> "before";
+         *      case 0  -> "equal";
+         *      default -> "after";
+         * };
+         */
     }
 
     /**
@@ -48,7 +64,7 @@ public class StringMethods {
         // TODO: 3 - Use contains() to check if text contains keyword.
         //  Use indexOf() to find the position of keyword in text.
         //  Return "contains: <bool>, indexOf: <index>"
-        return null;
+        return String.format("contains: %b, indexOf: %d", text.contains(keyword), text.indexOf(keyword));
     }
 
     /**
@@ -64,7 +80,7 @@ public class StringMethods {
         // TODO: 4 - First use replace(oldWord, newWord) to swap words.
         //  Then use replaceAll("\\d", "#") to replace all digits with "#".
         //  Return the final result.
-        return null;
+        return text.replace(oldWord, newWord).replaceAll("\\d", "#");
     }
 
     /**
@@ -79,7 +95,13 @@ public class StringMethods {
         // TODO: 5 - Use text.split(delimiter) to get an array of parts.
         //  Build a result string with each part on a new line: "[i] part"
         //  Example: "[0] apple\n[1] banana\n[2] cherry"
-        return null;
+        String[] words = text.split(delimiter);
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < words.length; i++) {
+            result.append(String.format("[%d] %s\n", i, words[i]));
+        }
+
+        return result.toString();
     }
 
     /**
@@ -93,7 +115,7 @@ public class StringMethods {
     public static String checkStartEnd(String filename, String prefix, String extension) {
         // TODO: 6 - Use startsWith(prefix) and endsWith(extension).
         //  Return: "startsWith '<prefix>': <bool>, endsWith '<extension>': <bool>"
-        return null;
+        return String.format("startsWith: %s: %b, endsWith %s: %b", prefix, filename.startsWith(prefix), extension, filename.endsWith(extension));
     }
 
     /**
@@ -107,7 +129,7 @@ public class StringMethods {
     public static String substringDemo(String text, int beginIndex, int endIndex) {
         // TODO: 7 - Use text.substring(beginIndex, endIndex) to extract a portion of text.
         //  Return the substring.
-        return null;
+        return text.substring(beginIndex, endIndex);
     }
 
     /**
@@ -122,7 +144,7 @@ public class StringMethods {
     public static String formatReceipt(String item, int quantity, double price) {
         // TODO: 8 - Use String.format() to create a formatted string.
         //  Format: "%-15s x%-5d $%.2f" (left-align item in 15 chars, quantity in 5, price with 2 decimals)
-        return null;
+        return String.format("%-15s x%-5d $%.2f", item, quantity, price);
     }
 
     public static void main(String[] args) {
