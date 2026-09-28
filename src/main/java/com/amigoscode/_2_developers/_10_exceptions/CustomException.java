@@ -35,22 +35,22 @@ public class CustomException {
     //    Otherwise, subtract amount from balance.
     //  - A method: double getBalance()
     static class BankAccount {
-        private static double accountBalance;
+        private double balance;
 
         public BankAccount(double balance) {
-            accountBalance = balance;
+            this.balance = balance;
         }
 
         void withdraw(double amount) throws InsufficientFundsException {
-            if (amount > accountBalance) {
-                throw new InsufficientFundsException("Insuficient funds", amount - accountBalance);
+            if (amount > balance) {
+                throw new InsufficientFundsException("Insufficient funds", amount - balance);
             } else {
-                accountBalance -= amount;
+                balance -= amount;
             }
         }
 
-        public static double getAccountBalance() {
-            return accountBalance;
+        public double getBalance() {
+            return balance;
         }
     }
 
@@ -60,9 +60,9 @@ public class CustomException {
     //  Otherwise, print "Age " + age + " is valid."
     public static void validateAge(int age) {
         if (age < 0 || age > 150) {
-            throw new InvalidAgeException("Age is invalid");
+            throw new InvalidAgeException("Invalid age: " + age);
         } else {
-            System.out.printf("Age %s is valid.\n", age);
+            System.out.printf("Age %d is valid.%n", age);
         }
     }
 
@@ -78,9 +78,11 @@ public class CustomException {
         BankAccount bankAccount = new BankAccount(100);
         try {
             bankAccount.withdraw(50);
+            System.out.println("Remaining balance: " + bankAccount.getBalance());
             bankAccount.withdraw(75);
         } catch (InsufficientFundsException ex) {
             System.out.println(ex.getMessage());
+            System.out.println("Short by: " + ex.getAmount());
         }
 
         try {

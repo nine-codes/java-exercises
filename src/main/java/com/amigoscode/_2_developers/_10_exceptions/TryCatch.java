@@ -1,6 +1,5 @@
 package com.amigoscode._2_developers._10_exceptions;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -117,7 +116,7 @@ public class TryCatch {
         //  The Scanner will be automatically closed after the try block.
         try (Scanner scanner = new Scanner(input)) {
             return scanner.nextInt();
-        } catch (InputMismatchException ex) {
+        } catch (Exception ex) {
             return -1;
         }
     }
