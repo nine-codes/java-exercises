@@ -12,6 +12,22 @@ public class EnumExercises {
     // TODO: 1 - Create an enum called Season with four constants:
     //  SPRING, SUMMER, AUTUMN, WINTER
     //  For now, just declare them without any fields or methods.
+    enum Season {
+        SPRING("Flowers bloom"),
+        SUMMER("Sun shines"),
+        AUTUMN("Leaves fall"),
+        WINTER("Snow falls");
+
+        private final String description;
+
+        Season(String description) {
+            this.description = description;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+    }
 
 
     // TODO: 2 - Modify the Season enum to add:
@@ -34,6 +50,21 @@ public class EnumExercises {
     //  - A private final int 'level' field
     //  - A constructor that takes an int level
     //  - A getter getLevel()
+    enum Priority {
+        LOW(1),
+        MEDIUM(2),
+        HIGH(3);
+
+        private final int level;
+
+        Priority(int level) {
+            this.level = level;
+        }
+
+        public int getLevel() {
+            return level;
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -42,6 +73,10 @@ public class EnumExercises {
         //  For each season, print a message like "Spring: Flowers bloom"
         //  using the getDescription() method.
         //  Test with Season.SUMMER.
+        Season season = Season.SPRING;
+        switch (season) {
+            case SPRING, SUMMER, AUTUMN, WINTER -> System.out.println(season + ": " + season.getDescription());
+        }
 
 
         System.out.println("\n=== Iterate Over Enum Values ===");
@@ -49,6 +84,14 @@ public class EnumExercises {
         //  Loop through them and print each one with its description and ordinal.
         //  Example output: "0: SPRING - Flowers bloom"
         //  Also iterate over Priority.values() and print each with its level.
+        Season[] seasons = Season.values();
+        for (int i = 0; i < seasons.length; i++) {
+            System.out.printf("%d: %s - %s%n", i, seasons[i], seasons[i].getDescription());
+        }
 
+        Priority[] priorities = Priority.values();
+        for (int i = 0; i < priorities.length; i++) {
+            System.out.printf("%d: %s - %s%n", i, priorities[i], priorities[i].getLevel());
+        }
     }
 }
